@@ -9,7 +9,7 @@ import (
     "io/ioutil"
     "encoding/json"
     "github.com/JFrogDev/artifactory-cli-go/utils"
-    "golang.org/x/crypto/ssh/terminal"
+    "github.com/JFrogDev/artifactory-cli-go/Godeps/_workspace/golang.org/x/crypto/ssh/terminal"
 )
 
 func Config(details *utils.ArtifactoryDetails, interactive, shouldEncPassword bool) {

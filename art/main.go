@@ -2,11 +2,11 @@ package main
 
 import (
 	"os"
-	"strings"
 	"strconv"
+	"strings"
 	"github.com/JFrogDev/artifactory-cli-go/utils"
 	"github.com/JFrogDev/artifactory-cli-go/commands"
-	"github.com/codegangsta/cli"
+	"github.com/JFrogDev/artifactory-cli-go/Godeps/_workspace/src/github.com/codegangsta/cli"
 )
 
 var flags = new(utils.Flags)
@@ -182,7 +182,7 @@ func initFlags(c *cli.Context, cmd string) {
     } else {
         flags.EncPassword = c.Bool("enc-password")
     }
-    
+
     if cmd == "config" {
         flags.ArtDetails = getArtifactoryDetails(c, false)
         if !flags.Interactive && flags.ArtDetails.Url == "" {
@@ -209,7 +209,7 @@ func initFlags(c *cli.Context, cmd string) {
              flags.Flat, _ = strconv.ParseBool(strFlat)
          }
     }
-    
+
     flags.Deb = c.String("deb")
     if flags.Deb != "" && len(strings.Split(flags.Deb, "/")) != 3 {
         utils.Exit(utils.ExitCodeError, "The --deb option should be in the form of distribution/component/architecture")
