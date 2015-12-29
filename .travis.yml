@@ -1,7 +1,7 @@
 language: go
 sudo: required
 go:
-- 1.4.2
+- 1.5.2
 
 env:
   matrix:
@@ -15,7 +15,7 @@ env:
 after_script:
 - ls -l ../../../../bin
 
-# workaround for travis-ci/gimme#25 to pick up latest version of gimme and run again
+# Workaround for travis-ci/gimme#25 to pick up latest version of gimme and run again
 before_install:
   - curl -o gimme -sL https://raw.githubusercontent.com/travis-ci/gimme/master/gimme
   - chmod u+x gimme
@@ -23,6 +23,14 @@ before_install:
   - eval "$(./gimme 1.5)"
   - go version
   - go env
+
+# Part of the same workaround.
+before_script:
+  - go get -d -v ./...
+
+# Part of the same workaround.
+script:
+  - go build -v ./...
 
 deploy:
   skip_cleanup: true
