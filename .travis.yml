@@ -1,24 +1,21 @@
 language: go
 sudo: required
 go:
-  - 1.5.2
-
+- 1.5.2
 env:
-    matrix:
-       - GIMME_OS=windows GIMME_ARCH=amd64
-       - GIMME_OS=linux GIMME_ARCH=amd64
-       - GIMME_OS=linux GIMME_ARCH=386
-       - GIMME_OS=darwin GIMME_ARCH=amd64
-    global:
-       - secure: "GxXEKlRPKZMsyNIexmX02lVEdUMr/GiTXs7WsVI1KF3UOQqpQ89lHN4xxSKtnYRKf8uRgP/2gDlkeZZIITIUoace33ltRFzaTM6x+A+nm1pUh29tUtcCZ/7Y57H3mbJHuzulRafATxVfp3wV76+eOgbMwdPzT1UwzlL79XQKLHH2yamqux0ORMGoMAvphCbmVcmpoZLI6QzWkzPkpCf+TvOkj+boxEhpJnfVOk0vgxOwFx08gh8svQiYWtuA7IBjoVl4qwN5QvrKD7UiZCOAu1a5fF+dTLynNp4I63UbRGc/mhESLYuYnM4xMstJHYNW3NqzbbIccr71MouAh8UMGG7Laz0WxiMYlKIAs7qy+am8tgsllSseinExi70CMo7SR3uXzyb69KtPjy3kBnzvetKdXhghml6jwx5l2q4GkFuu7HaIvOCFxqqihj4QAMY5N5faDOdInBnXO5mMQnev3R6PiPCttuT9+OqsLORf78HYbOUmOvBr9qychleMKC9vJfz55vwtbdy49u+f/hYKdxVMv5Lhbl50NE3BmaciZ4NyyUaWGRK4BihyHAVTnY4iuODzazFLFytl2h/D/7p1t7TFPetDMkInxmrol0RiBfXO0l5OO8Yga40cowStOkpUQDnw8AjQW2T99HjmeJHF5N11n8OoXUBmwhO6WcF7Mq4="
-
+  matrix:
+  - GIMME_OS=windows GIMME_ARCH=amd64
+  - GIMME_OS=linux GIMME_ARCH=amd64
+  - GIMME_OS=linux GIMME_ARCH=386
+  - GIMME_OS=darwin GIMME_ARCH=amd64
+  global:
+    secure: cNWLXIji1VrGBjHO3Nnmlmnh2grW3ObR8tOCRuYTIER/daC0xo88jmaqUNwzvOpCrIg8YHRIn/7PKTqL4M8r5OuRnHrQll/3ADa2jg4mCAMKWPnAnFQDWg3d9l6nPG4BPrF5MUMWXAuLddmcBY5ozQRXOjg+cJ8neDWr0iFXv5fjqfcHAlkbzj5d0RiYIvuoaWvOmuj52wBxhn91ByvrCCwn0DMSb15y6TmKPvJlMKg37sDfEUCduy3m0nr3hJ8V/Lb7osxomKfLu32W2picxgMw3qXXrejz2iM89jK5cIUSSKRNw31W3b1iHKVUgSbX5AriMpDmXj/PjzacQGHXIJ5v0vqNaAH5VtlaHrrn/wjkimj/neO9CyUPFraD4daQYXPWSXp9/6uyVQyoEHYbSvhyDctRUd9V3bmbZdfgQv2ItZCGJNgvZo+bC53UqT1tde6ZSI6iPSmrmZGeZ4g2kUXcJOHm75/s1SU9y47Tdcut8CKP8LsfMpUEUvpMih/e/5UAM5BG21CyA8XmT7O3mdTEP79P61W4wRVpq5LzB4khUrG93Nq+F8xKps2MaaZL3h4mDCtnkMs+B9kopN/wDVM+vjeTcLjWhkI7HIXFx4BxppVf+RFbov65/tvJ+lF01/AGff31YHlgKQan3/1IwFF4VNOXTqX7oq82ZPx1CQA=
 after_script:
-  - ls -l ../../../../bin
-
+- ls -l ../../../../bin
 deploy:
   skip_cleanup: true
   file: bintray_descriptors/${GIMME_OS}_${GIMME_ARCH}.json
   provider: bintray
-  key: $API_KEY
+  key: "$API_KEY"
   passphrase: aaa
   user: jfrogdev
