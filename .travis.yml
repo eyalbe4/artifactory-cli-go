@@ -2,6 +2,7 @@ language: go
 sudo: required
 go:
 - 1.5.2
+
 env:
   matrix:
   - GIMME_OS=windows GIMME_ARCH=amd64
@@ -10,8 +11,19 @@ env:
   - GIMME_OS=darwin GIMME_ARCH=amd64
   global:
     secure: cNWLXIji1VrGBjHO3Nnmlmnh2grW3ObR8tOCRuYTIER/daC0xo88jmaqUNwzvOpCrIg8YHRIn/7PKTqL4M8r5OuRnHrQll/3ADa2jg4mCAMKWPnAnFQDWg3d9l6nPG4BPrF5MUMWXAuLddmcBY5ozQRXOjg+cJ8neDWr0iFXv5fjqfcHAlkbzj5d0RiYIvuoaWvOmuj52wBxhn91ByvrCCwn0DMSb15y6TmKPvJlMKg37sDfEUCduy3m0nr3hJ8V/Lb7osxomKfLu32W2picxgMw3qXXrejz2iM89jK5cIUSSKRNw31W3b1iHKVUgSbX5AriMpDmXj/PjzacQGHXIJ5v0vqNaAH5VtlaHrrn/wjkimj/neO9CyUPFraD4daQYXPWSXp9/6uyVQyoEHYbSvhyDctRUd9V3bmbZdfgQv2ItZCGJNgvZo+bC53UqT1tde6ZSI6iPSmrmZGeZ4g2kUXcJOHm75/s1SU9y47Tdcut8CKP8LsfMpUEUvpMih/e/5UAM5BG21CyA8XmT7O3mdTEP79P61W4wRVpq5LzB4khUrG93Nq+F8xKps2MaaZL3h4mDCtnkMs+B9kopN/wDVM+vjeTcLjWhkI7HIXFx4BxppVf+RFbov65/tvJ+lF01/AGff31YHlgKQan3/1IwFF4VNOXTqX7oq82ZPx1CQA=
+
 after_script:
 - ls -l ../../../../bin
+
+# workaround for travis-ci/gimme#25 to pick up latest version of gimme and run again
+before_install:
+  - curl -o gimme -sL https://raw.githubusercontent.com/travis-ci/gimme/master/gimme
+  - chmod u+x gimme
+  - unset GOROOT GOTOOLDIR
+  - eval "$(./gimme 1.5)"
+  - go version
+  - go env
+
 deploy:
   skip_cleanup: true
   file: bintray_descriptors/${GIMME_OS}_${GIMME_ARCH}.json
