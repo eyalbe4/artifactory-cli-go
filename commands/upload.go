@@ -8,7 +8,7 @@ import (
   "regexp"
   "strconv"
   "net/http"
-  "github.com/JFrogDev/artifactory-cli-go/utils"
+  "github.com/eyalbe4/artifactory-cli-go/utils"
 )
 
 // Uploads the artifacts in the specified local path pattern to the specified target path.

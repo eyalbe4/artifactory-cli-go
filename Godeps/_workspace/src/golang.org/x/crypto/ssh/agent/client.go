@@ -24,7 +24,7 @@ import (
 	"math/big"
 	"sync"
 
-	"github.com/JFrogDev/artifactory-cli-go/Godeps/_workspace/src/golang.org/x/crypto/ssh"
+	"github.com/eyalbe4/artifactory-cli-go/Godeps/_workspace/src/golang.org/x/crypto/ssh"
 )
 
 // Agent represents the capabilities of an ssh-agent.

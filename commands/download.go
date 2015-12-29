@@ -5,7 +5,7 @@ import (
   "sync"
   "strconv"
   "encoding/json"
-  "github.com/JFrogDev/artifactory-cli-go/utils"
+  "github.com/eyalbe4/artifactory-cli-go/utils"
 )
 
 // Downloads the artifacts using the specified download pattern.

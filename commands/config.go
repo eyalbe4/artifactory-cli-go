@@ -8,8 +8,8 @@ import (
     "syscall"
     "io/ioutil"
     "encoding/json"
-    "github.com/JFrogDev/artifactory-cli-go/utils"
-    "github.com/JFrogDev/artifactory-cli-go/Godeps/_workspace/src/golang.org/x/crypto/ssh/terminal"
+    "github.com/eyalbe4/artifactory-cli-go/utils"
+    "github.com/eyalbe4/artifactory-cli-go/Godeps/_workspace/src/golang.org/x/crypto/ssh/terminal"
 )
 
 func Config(details *utils.ArtifactoryDetails, interactive, shouldEncPassword bool) {

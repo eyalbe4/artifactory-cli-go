@@ -4,9 +4,9 @@ import (
 	"os"
 	"strconv"
 	"strings"
-	"github.com/JFrogDev/artifactory-cli-go/utils"
-	"github.com/JFrogDev/artifactory-cli-go/commands"
-	"github.com/JFrogDev/artifactory-cli-go/Godeps/_workspace/src/github.com/codegangsta/cli"
+	"github.com/eyalbe4/artifactory-cli-go/utils"
+	"github.com/eyalbe4/artifactory-cli-go/commands"
+	"github.com/eyalbe4/artifactory-cli-go/Godeps/_workspace/src/github.com/codegangsta/cli"
 )
 
 var flags = new(utils.Flags)

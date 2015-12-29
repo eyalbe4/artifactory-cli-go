@@ -14,7 +14,7 @@ import (
 	"io"
 	"math/big"
 
-	"github.com/JFrogDev/artifactory-cli-go/Godeps/_workspace/src/golang.org/x/crypto/curve25519"
+	"github.com/eyalbe4/artifactory-cli-go/Godeps/_workspace/src/golang.org/x/crypto/curve25519"
 )
 
 const (

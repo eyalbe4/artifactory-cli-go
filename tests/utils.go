@@ -2,7 +2,7 @@ package tests
 
 import (
     "runtime"
-    "github.com/JFrogDev/artifactory-cli-go/utils"
+    "github.com/eyalbe4/artifactory-cli-go/utils"
 )
 
 func GetFlags() *utils.Flags {
