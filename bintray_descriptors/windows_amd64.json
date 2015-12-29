@@ -3,6 +3,7 @@
         "name": "artifactory-cli-windows-amd64",
         "repo": "generic",
         "licenses": ["Apache-2.0"],
+        "vcs_url": "https://github.com/bintray/bintray-client-java.git",
         "subject": "eyalbr"
     },
     "version": {
