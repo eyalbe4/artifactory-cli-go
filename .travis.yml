@@ -20,6 +20,6 @@ deploy:
   skip_cleanup: true
   file: bintray_descriptors/${GIMME_OS}_${GIMME_ARCH}.json
   provider: bintray
-  key: "$API_KEY"
+  key: aaa
   passphrase: "$PASSPHRASE"
   user: jfrogdev
