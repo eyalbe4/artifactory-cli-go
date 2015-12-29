@@ -2,6 +2,7 @@
     "package": {
         "name": "artifactory-cli-mac-386",
         "repo": "generic",
+        "licenses": ["Apache-2.0"],
         "subject": "eyalbr"
     },
     "version": {

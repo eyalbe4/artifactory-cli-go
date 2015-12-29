@@ -2,6 +2,7 @@
     "package": {
         "name": "artifactory-cli-linux-amd64",
         "repo": "generic",
+        "licenses": ["Apache-2.0"],
         "subject": "eyalbr"
     },
     "version": {
